@@ -11,18 +11,18 @@ app = FastAPI()
 # ---------- Load all models once globally ----------
 
 # Helmet detection model & class namest
-helmet_model = YOLO('app/models/helmet.pt')
+helmet_model = YOLO('models/helmet.pt')
 HELMET_CLASSES = {0: "Plate", 1: "WithHelmet", 2: "WithoutHelmet"}
 
 # Triple riding model
-triple_model = YOLO('app/models/yolov8n.pt')
+triple_model = YOLO('models/yolov8n.pt')
 
 # Wrong route model
-wrong_route_model = YOLO("app/models/wrong_route.pt")
+wrong_route_model = YOLO("models/wrong_route.pt")
 WRONG_ROUTE_CLASSES = ['Right Side', 'Wrong Side']
 
 # Pothole model
-pothole_model = YOLO("app/models/potholes.pt")
+pothole_model = YOLO("models/potholes.pt")
 POTHOLE_CLASSES = ['pothole', 'other']
 
 # PaddleOCR for number plate reading (disable GPU if not available)
